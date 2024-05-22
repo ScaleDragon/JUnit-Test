@@ -8,7 +8,6 @@ import java.io.ObjectOutputStream;
 public class SaveGame {
     private String pathSave;
     private GameProgress progress;
-    private SaveGame save;
 
     public SaveGame(String pathSave, GameProgress progress) {
         this.pathSave = pathSave;

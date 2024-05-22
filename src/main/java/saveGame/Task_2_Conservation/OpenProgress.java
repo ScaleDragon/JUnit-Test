@@ -9,8 +9,8 @@ public class OpenProgress {
     public static GameProgress openProgress(String pathSaveProgress) {
         GameProgress progress = null;
         try (FileInputStream fileSaved = new FileInputStream(pathSaveProgress);
-             ObjectInputStream fileSavadInput = new ObjectInputStream(fileSaved)) {
-            progress = (GameProgress) fileSavadInput.readObject();
+             ObjectInputStream fileSavedInput = new ObjectInputStream(fileSaved)) {
+            progress = (GameProgress) fileSavedInput.readObject();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
