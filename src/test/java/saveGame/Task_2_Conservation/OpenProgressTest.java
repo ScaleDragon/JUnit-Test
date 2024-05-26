@@ -10,13 +10,16 @@ class OpenProgressTest {
     @Test
     public void openProgressTest() {
         //give
-        GameProgress progressActual;
+        GameProgress progressPath;
+        GameProgress progressExpected;
 
         //when
-        progressActual = openProgress("F:\\GamesNetology\\savegames\\save1.dat");
+        progressPath = openProgress("F:\\GamesNetology\\savegames\\save1.dat");
+        progressExpected = new GameProgress(89, 3, 16, 156.6);
 
         //then
-        Assertions.assertEquals("GameProgress{health=89, weapons=3, lvl=16, distance=156.6}",
-                progressActual.toString());
+        Assertions.assertEquals(progressExpected,
+                progressPath);
     }
+
 }

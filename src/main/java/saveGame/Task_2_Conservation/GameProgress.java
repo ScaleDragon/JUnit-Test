@@ -26,4 +26,24 @@ public class GameProgress implements Serializable {
                 ", distance=" + distance +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==this){
+            return true;
+        }
+        if(obj==null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        GameProgress quest=(GameProgress) obj;
+        return health==quest.health && weapons== quest.weapons
+                && lvl== quest.lvl && distance== quest.distance;
+    }
+
+    @Override
+    public int hashCode() {
+       int total=88;
+       total= (int) (total*88+ (health+ weapons)+(distance/lvl));
+        return total;
+    }
 }
