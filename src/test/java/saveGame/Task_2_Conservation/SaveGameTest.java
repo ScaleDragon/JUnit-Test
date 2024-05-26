@@ -3,9 +3,6 @@ package saveGame.Task_2_Conservation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import static saveGame.Task_2_Conservation.SaveGame.saveGame;
 
 public class SaveGameTest {
@@ -32,7 +29,7 @@ public class SaveGameTest {
         final String pathSave = "F:\\GamesNetology\\savegames\\save7.dat";
 
         // then:
-        Assertions.assertThrows(NullPointerException.class, ()->{
+        Assertions.assertThrows(NullPointerException.class, () -> {
             saveGame(null, progress);
         });
     }
